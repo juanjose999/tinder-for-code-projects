@@ -1,9 +1,13 @@
 package com.app.tinderproyects.entity;
 import jakarta.persistence.*;
+import lombok.*;
 
 import javax.print.attribute.standard.MediaSize;
 import java.util.List;
-
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
 public class User {
     @Id

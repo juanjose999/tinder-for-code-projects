@@ -1,10 +1,13 @@
 package com.app.tinderproyects.entity;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
+@AllArgsConstructor
+@NoArgsConstructor
+@Getter
+@Setter
 @Entity
-@Data
 public class Manager {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
