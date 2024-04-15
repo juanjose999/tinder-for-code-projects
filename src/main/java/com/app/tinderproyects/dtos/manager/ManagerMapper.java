@@ -2,8 +2,8 @@ package com.app.tinderproyects.dtos.manager;
 
 import com.app.tinderproyects.entity.Manager;
 
-public class ManagerMapping {
-    private static Manager managerDtoToManager(ManagerDto managerDto){
+public class ManagerMapper {
+    public static Manager managerDtoToManager(ManagerDto managerDto){
         Manager manager = new Manager();
         manager.setUser(manager.getUser());
         manager.setProject(manager.getProject());

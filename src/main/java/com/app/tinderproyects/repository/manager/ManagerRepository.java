@@ -5,7 +5,7 @@ import com.app.tinderproyects.entity.Manager;
 import java.util.List;
 import java.util.Optional;
 
-public interface MemberRepository {
+public interface ManagerRepository {
     List<Manager> allManager();
     Optional<Manager> findManagerById(Long id);
     Manager saveManger(Manager manager);
