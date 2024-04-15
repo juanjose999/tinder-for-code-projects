@@ -1,6 +1,6 @@
 package com.app.tinderproyects.repository.members;
 
-import com.app.tinderproyects.entity.member;
+import com.app.tinderproyects.entity.Member;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -14,25 +14,25 @@ public class MemberRepositoryImpl implements MembersRepository {
     private final MembersRepositoryJpa membersRepositoryJpa;
 
     @Override
-    public List<member> allMembers() {
+    public List<Member> allMembers() {
         return membersRepositoryJpa.findAll();
     }
 
     @Override
-    public Optional<member> findProjectMemberById(Long id) {
+    public Optional<Member> findProjectMemberById(Long id) {
         return membersRepositoryJpa.findById(id);
     }
 
     @Override
-    public member saveMember(member projectMember) {
+    public Member saveMember(Member projectMember) {
         return membersRepositoryJpa.save(projectMember);
     }
 
     @Override
-    public member updateMember(Long id, member projectMember) {
-        Optional<member> findProjectMember = findProjectMemberById(id);
+    public Member updateMember(Long id, Member projectMember) {
+        Optional<Member> findProjectMember = findProjectMemberById(id);
         if(findProjectMember.isPresent()){
-            member existing = findProjectMember.get();
+            Member existing = findProjectMember.get();
             existing.setUser(projectMember.getUser());
             existing.setProject(projectMember.getProject());
             return membersRepositoryJpa.save(existing);
@@ -42,7 +42,7 @@ public class MemberRepositoryImpl implements MembersRepository {
 
     @Override
     public Boolean deleteMemberById(Long id) {
-        Optional<member> findProjectMember = findProjectMemberById(id);
+        Optional<Member> findProjectMember = findProjectMemberById(id);
         if(findProjectMember.isPresent()){
             membersRepositoryJpa.delete(findProjectMember.get());
             return true;

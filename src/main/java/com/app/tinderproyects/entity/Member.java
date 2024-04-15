@@ -8,7 +8,7 @@ import lombok.*;
 @Getter
 @Setter
 @Entity
-public class member {
+public class Member {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_members;
