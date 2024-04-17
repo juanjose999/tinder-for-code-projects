@@ -34,7 +34,6 @@ public class ManagerRepositoryImpl implements ManagerRepository {
         if(findManager.isPresent()){
             Manager existing = findManager.get();
             existing.setUser(manager.getUser());
-            existing.setProject(manager.getProject());
             return managerProjectJpa.save(existing);
         }
         throw new RuntimeException("Error in update manager.");

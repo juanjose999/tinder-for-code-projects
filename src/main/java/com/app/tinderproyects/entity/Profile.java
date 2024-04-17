@@ -3,12 +3,14 @@ package com.app.tinderproyects.entity;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.io.Serializable;
+
 @AllArgsConstructor
 @NoArgsConstructor
 @Getter
 @Setter
 @Entity
-public class Profile {
+public class Profile implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id_profile;
@@ -17,12 +19,11 @@ public class Profile {
     @JoinColumn(name = "id_project")
     private Project id_project;
 
-    private Project name;
+    private String name;
 
-    private Project description;
+    private String description;
 
     private Long id_manager;
-
 
 }
 

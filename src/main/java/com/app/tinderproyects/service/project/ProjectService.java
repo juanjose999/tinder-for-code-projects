@@ -11,6 +11,8 @@ public interface ProjectService {
     List<ProjectResponseDto> allProjects();
     Optional<ProjectResponseDto> findProjectById(Long id);
     ProjectResponseDto saveProject(ProjectDto projectDto);
+    ProjectResponseDto saveProjectWithUser(Long idUser, ProjectDto projectDto);
+
     ProjectResponseDto updateProject(Long id, ProjectDto projectDto);
     Boolean deleteProjectById(Long id);
 }

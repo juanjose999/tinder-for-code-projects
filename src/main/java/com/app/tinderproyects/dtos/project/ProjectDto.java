@@ -16,14 +16,11 @@ public class ProjectDto {
 
     private String description;
 
-    private Manager managerProject;
-
     private List<User> userList;
 
-    public ProjectDto(String name_project, String description, Manager managerProject, List<User> userList) {
+    public ProjectDto(String name_project, String description, List<User> userList) {
         this.name_project = name_project;
         this.description = description;
-        this.managerProject = managerProject;
         this.userList = userList;
     }
 }

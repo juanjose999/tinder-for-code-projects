@@ -12,9 +12,9 @@ import lombok.Setter;
 public class ProfileDto {
     private Project id_project;
 
-    private Project name;
+    private String name;
 
-    private Project description;
+    private String description;
 
     private Long id_manager;
 }

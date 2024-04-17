@@ -19,15 +19,12 @@ public class UserDto {
 
     private String email;
 
-    private Manager manager;
-
     private Project project;
 
-    public UserDto(String user_name, String password_hash, String email, Manager manager) {
+    public UserDto(String user_name, String password_hash, String email) {
         this.user_name = user_name;
         this.password_hash = password_hash;
         this.email = email;
-        this.manager = manager;
         this.project = null;
     }
 }

@@ -8,8 +8,6 @@ public class ProjectMapper {
         Project project = new Project();
         project.setName_project(projectDto.getName_project());
         project.setDescription(projectDto.getDescription());
-        project.setManagerProject(projectDto.getManagerProject());
-        project.setUserList(projectDto.getUserList());
         return project;
     }
 
@@ -18,8 +16,6 @@ public class ProjectMapper {
         projectResponseDto.setId_project(project.getId_project());
         projectResponseDto.setName_project(project.getName_project());
         projectResponseDto.setDescription(project.getDescription());
-        projectResponseDto.setManagerProject(project.getManagerProject());
-        projectResponseDto.setUserList(project.getUserList());
         return projectResponseDto;
     }
 

@@ -19,10 +19,10 @@ public class ProfileMapper {
     }
     public static ProfileResponseDto profileToProfileResponseDto(Profile profile){
         ProfileResponseDto profileResponseDto = new ProfileResponseDto();
+        profileResponseDto.setId_project(profile.getId_project());
         profileResponseDto.setName(profile.getName());
         profileResponseDto.setDescription(profile.getDescription());
-        profileResponseDto.setId_manager(profileResponseDto.getId_manager());
-        profileResponseDto.setId_project(profileResponseDto.getId_project());
+        profileResponseDto.setId_manager(profile.getId_manager());
         return profileResponseDto;
     }
 }

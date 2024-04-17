@@ -3,8 +3,14 @@ package com.app.tinderproyects.service.profile;
 import com.app.tinderproyects.dtos.profile.ProfileDto;
 import com.app.tinderproyects.dtos.profile.ProfileMapper;
 import com.app.tinderproyects.dtos.profile.ProfileResponseDto;
+import com.app.tinderproyects.dtos.project.ProjectResponseDto;
+import com.app.tinderproyects.entity.Manager;
 import com.app.tinderproyects.entity.Profile;
+import com.app.tinderproyects.entity.Project;
+import com.app.tinderproyects.entity.User;
+import com.app.tinderproyects.repository.manager.ManagerRepository;
 import com.app.tinderproyects.repository.profile.ProfileRepository;
+import com.app.tinderproyects.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
@@ -17,6 +23,7 @@ import java.util.Optional;
 public class ProfileServiceImpl implements ProfileService{
 
     private final ProfileRepository profileRepository;
+
     @Override
     public List<ProfileResponseDto> allProfiles() {
         List<ProfileResponseDto> responseDto = new ArrayList<>();
@@ -33,6 +40,7 @@ public class ProfileServiceImpl implements ProfileService{
     @Override
     public ProfileResponseDto saveProfile(ProfileDto profileDto) {
         return ProfileMapper.profileToProfileResponseDto(profileRepository.saveProfile(ProfileMapper.profileDtoToProfile(profileDto)));
+
     }
 
     @Override

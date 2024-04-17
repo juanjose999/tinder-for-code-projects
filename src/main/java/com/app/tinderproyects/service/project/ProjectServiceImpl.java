@@ -37,6 +37,11 @@ public class ProjectServiceImpl implements ProjectService{
     }
 
     @Override
+    public ProjectResponseDto saveProjectWithUser(Long idUser, ProjectDto projectDto) {
+        return ProjectMapper.projectToProjectResponseDto(projectRepository.saveProjectWithUser(idUser, ProjectMapper.projectDtoToProject(projectDto)));
+    }
+
+    @Override
     public ProjectResponseDto updateProject(Long id, ProjectDto projectDto) {
         return ProjectMapper.projectToProjectResponseDto(projectRepository.updateProject(id, ProjectMapper.projectDtoToProject(projectDto)));
     }

@@ -1,6 +1,11 @@
 package com.app.tinderproyects.repository.profile;
 
+import com.app.tinderproyects.entity.Manager;
 import com.app.tinderproyects.entity.Profile;
+import com.app.tinderproyects.entity.Project;
+import com.app.tinderproyects.entity.User;
+import com.app.tinderproyects.repository.manager.ManagerRepository;
+import com.app.tinderproyects.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Repository;
 
@@ -24,6 +29,7 @@ public class ProjectProfileImpl implements ProfileRepository {
 
     @Override
     public Profile saveProfile(Profile profile) {
+
         return profileRepositoryJpa.save(profile);
     }
 

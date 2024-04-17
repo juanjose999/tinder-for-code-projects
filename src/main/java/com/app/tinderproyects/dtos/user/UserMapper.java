@@ -10,17 +10,16 @@ public class UserMapper {
         user.setPassword_hash(userDto.getPassword_hash());
         user.setEmail(userDto.getEmail());
         user.setProject(userDto.getProject());
-        user.setManager(userDto.getManager());
         return user;
     }
 
     public static UserResponseDto userToUserResponseDto(User user){
         UserResponseDto userResponseDto = new UserResponseDto();
+        userResponseDto.setId(user.getId_user());
         userResponseDto.setUser_name(user.getUser_name());
-        userResponseDto.setPassword_hash(userResponseDto.getPassword_hash());
+        userResponseDto.setPassword_hash(user.getPassword_hash());
         userResponseDto.setEmail(user.getEmail());
         userResponseDto.setProject(user.getProject());
-        userResponseDto.setManager(user.getManager());
         return userResponseDto;
     }
 

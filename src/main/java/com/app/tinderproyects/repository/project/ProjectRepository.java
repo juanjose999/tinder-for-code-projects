@@ -9,6 +9,7 @@ public interface ProjectRepository {
     List<Project> allProjects();
     Optional<Project> findProjectById(Long id);
     Project saveProject(Project project);
+    Project saveProjectWithUser(Long idUser, Project project);
     Project updateProject(Long id, Project project);
     Boolean deleteProjectById(Long id);
 }
