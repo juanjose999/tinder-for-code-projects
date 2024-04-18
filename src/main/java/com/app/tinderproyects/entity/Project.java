@@ -22,11 +22,12 @@ public class Project implements Serializable {
     private String description;
 
     @OneToOne
+    @JsonIgnore
     @JoinColumn(name = "id_user_manager")
     private User userManager;
 
     @OneToMany(mappedBy = "project")
-    private List<User> users;
+    private List<User> project_user_list;
 
     @OneToMany(mappedBy = "project")
     @JsonIgnore

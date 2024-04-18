@@ -10,6 +10,7 @@ import java.util.Optional;
 public interface UserService {
     List<UserResponseDto> allUser();
     Optional<UserResponseDto> findUserById(Long id);
+    UserResponseDto findByEmailAndPasswordHash(String email, String password);
     UserResponseDto saveUser(UserDto userDto);
     UserResponseDto updateUser(Long id, UserDto userDto);
     Boolean deleteUserById(Long id);

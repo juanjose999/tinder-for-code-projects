@@ -18,5 +18,4 @@ public class ProjectMapper {
         projectResponseDto.setDescription(project.getDescription());
         return projectResponseDto;
     }
-
 }

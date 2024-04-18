@@ -17,12 +17,12 @@ public class ProjectResponseDto {
 
     private String description;
 
-    private List<User> userList;
+    private List<User> project_user_list;
 
-    public ProjectResponseDto(Long id_project, String name_project, String description, List<User> userList) {
+    public ProjectResponseDto(Long id_project, String name_project, String description, List<User> project_user_list) {
         this.id_project = id_project;
         this.name_project = name_project;
         this.description = description;
-        this.userList = userList;
+        this.project_user_list = project_user_list;
     }
 }

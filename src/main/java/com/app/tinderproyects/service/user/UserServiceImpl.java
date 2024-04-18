@@ -31,6 +31,11 @@ public class UserServiceImpl implements UserService{
     }
 
     @Override
+    public UserResponseDto findByEmailAndPasswordHash(String email, String password) {
+        return UserMapper.userToUserResponseDto(userRepository.findUserByEmailAndPassword_hash(email, password));
+    }
+
+    @Override
     public UserResponseDto saveUser(UserDto userDto) {
         return UserMapper.userToUserResponseDto(userRepository.saveUser(UserMapper.userDtoToUser(userDto)));
     }

@@ -26,6 +26,11 @@ public class UserController {
         return ResponseEntity.of(userService.findUserById(idUser));
     }
 
+    @GetMapping("/login")
+    public ResponseEntity<UserResponseDto> findByEmailAndPassword(@RequestBody UserDto userDto){
+        return ResponseEntity.ok(userService.findByEmailAndPasswordHash(userDto.getEmail(), userDto.getPassword_hash()));
+    }
+
     @PostMapping("/save")
     public ResponseEntity<UserResponseDto> saveUser(@RequestBody UserDto userDto){
         return ResponseEntity.ok(userService.saveUser(userDto));

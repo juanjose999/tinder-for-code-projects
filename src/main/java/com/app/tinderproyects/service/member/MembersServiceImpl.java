@@ -6,6 +6,7 @@ import com.app.tinderproyects.dtos.manager.ManagerResponseDto;
 import com.app.tinderproyects.dtos.member.MemberDto;
 import com.app.tinderproyects.dtos.member.MemberMapper;
 import com.app.tinderproyects.dtos.member.MemberResponseDto;
+import com.app.tinderproyects.dtos.member.MemberResponseListAddMember;
 import com.app.tinderproyects.entity.Member;
 import com.app.tinderproyects.repository.members.MembersRepository;
 import com.app.tinderproyects.service.manager.ManagerService;
@@ -35,8 +36,8 @@ public class MembersServiceImpl implements MembersService {
     }
 
     @Override
-    public MemberResponseDto saveMember(MemberDto memberDto) {
-        return MemberMapper.memberToMemberResponseDto(membersRepository.saveMember(MemberMapper.memberDtoToMember(memberDto)));
+    public MemberResponseListAddMember saveMember(MemberDto memberDto) {
+        return MemberMapper.memberResponseListAddMember(membersRepository.saveMember(MemberMapper.memberDtoToMember(memberDto)));
     }
 
     @Override

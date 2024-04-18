@@ -16,11 +16,11 @@ public class ProjectDto {
 
     private String description;
 
-    private List<User> userList;
+    private List<User> project_user_list;
 
-    public ProjectDto(String name_project, String description, List<User> userList) {
+    public ProjectDto(String name_project, String description, List<User> project_user_list) {
         this.name_project = name_project;
         this.description = description;
-        this.userList = userList;
+        this.project_user_list = project_user_list;
     }
 }

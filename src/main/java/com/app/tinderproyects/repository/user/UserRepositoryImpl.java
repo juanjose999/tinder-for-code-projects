@@ -22,6 +22,12 @@ public class UserRepositoryImpl implements UserRepository{
     }
 
     @Override
+    public User findUserByEmailAndPassword_hash(String email, String passwordHash) {
+        return userRepositoryJpa.findUserByEmailAndPasswordHash(email, passwordHash);
+    }
+
+
+    @Override
     public User saveUser(User user) {
         return userRepositoryJpa.save(user);
     }
