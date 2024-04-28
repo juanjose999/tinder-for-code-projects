@@ -8,6 +8,8 @@ import com.app.tinderproyects.repository.manager.ManagerRepository;
 import com.app.tinderproyects.repository.profile.ProfileRepository;
 import com.app.tinderproyects.repository.user.UserRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Repository;
 
 import java.util.List;
@@ -22,8 +24,8 @@ public class ProjectRepositoryImpl implements ProjectRepository {
     private final ProfileRepository profileRepository;
 
     @Override
-    public List<Project> allProjects() {
-        return projectRepositoryJpa.findAll();
+    public Page<Project> allProjects(Pageable pageable) {
+        return projectRepositoryJpa.findAll(pageable);
     }
 
     @Override

@@ -4,6 +4,8 @@ import com.app.tinderproyects.dtos.profile.ProfileDto;
 import com.app.tinderproyects.dtos.profile.ProfileResponseDto;
 import com.app.tinderproyects.service.profile.ProfileService;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Pageable;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
@@ -11,7 +13,8 @@ import java.util.List;
 
 @RequiredArgsConstructor
 @RestController
-@RequestMapping
+@RequestMapping("/profiles")
+@CrossOrigin("*")
 public class ProfileController {
 
     private final ProfileService profileService;

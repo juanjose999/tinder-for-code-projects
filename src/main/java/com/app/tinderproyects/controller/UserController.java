@@ -13,6 +13,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/user")
+@CrossOrigin("*")
 public class UserController {
 
     private final UserService userService;
@@ -26,7 +27,7 @@ public class UserController {
         return ResponseEntity.of(userService.findUserById(idUser));
     }
 
-    @GetMapping("/login")
+    @PostMapping("/login")
     public ResponseEntity<UserResponseDto> findByEmailAndPassword(@RequestBody UserDto userDto){
         return ResponseEntity.ok(userService.findByEmailAndPasswordHash(userDto.getEmail(), userDto.getPassword_hash()));
     }

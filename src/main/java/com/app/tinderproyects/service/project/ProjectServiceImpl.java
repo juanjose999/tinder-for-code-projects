@@ -6,6 +6,8 @@ import com.app.tinderproyects.dtos.project.ProjectResponseDto;
 import com.app.tinderproyects.entity.Project;
 import com.app.tinderproyects.repository.project.ProjectRepository;
 import lombok.RequiredArgsConstructor;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
@@ -19,10 +21,8 @@ public class ProjectServiceImpl implements ProjectService{
     private final ProjectRepository projectRepository;
 
     @Override
-    public List<ProjectResponseDto> allProjects() {
-        List<ProjectResponseDto> projectResponseDtoList = new ArrayList<>();
-        projectRepository.allProjects().forEach(project -> projectResponseDtoList.add(ProjectMapper.projectToProjectResponseDto(project)));
-        return projectResponseDtoList;
+    public Page<ProjectResponseDto> allProjects(Pageable pageable) {
+        return projectRepository.allProjects(pageable).map(ProjectMapper::projectToProjectResponseDto);
     }
 
     @Override

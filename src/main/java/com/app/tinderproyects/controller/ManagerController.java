@@ -12,6 +12,7 @@ import java.util.List;
 @RequiredArgsConstructor
 @RestController
 @RequestMapping("/manager")
+@CrossOrigin("*")
 public class ManagerController {
 
     private final ManagerService managerService;

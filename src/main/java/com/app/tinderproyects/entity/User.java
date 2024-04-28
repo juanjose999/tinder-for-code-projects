@@ -5,6 +5,8 @@ import lombok.*;
 
 import javax.print.attribute.standard.MediaSize;
 import java.io.Serializable;
+import java.util.Arrays;
+import java.util.Collection;
 import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
@@ -25,6 +27,16 @@ public class User implements Serializable {
     @JoinColumn(name = "id_project")
     private Project project;
 
+    @ManyToMany(fetch = FetchType.EAGER,cascade = CascadeType.ALL)
+    @JoinTable(
+            name = "usuarios_roles",
+            joinColumns = @JoinColumn(name = "usuario_id", referencedColumnName = "id_user"),
+            inverseJoinColumns = @JoinColumn(name = "rol_id", referencedColumnName = "id_rol")
+    )
+    private Collection<Rol> roles = Arrays.asList(new Rol("ROLE_USER"));
+
     @OneToOne(mappedBy = "userManager")
     private Project userManager;
+
+
 }
